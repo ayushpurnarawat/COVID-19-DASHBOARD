@@ -1,0 +1,164 @@
+<html>
+    <head>
+    <title>COVID-19 DASHBOARD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+    <div class="navigation">
+        <input type="checkbox" class="navigation_checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation_button"></label>
+        <div class="navigation_background">&nbsp;</div>
+        <nav class="navigation_nav">
+            <ul class="navigation_list">
+                <li class="navigation_item" ><a href="#" class="navigation_link"><span>ABOUT</span></a></li>
+                <li class="navigation_item"><a href="#" class="navigation_link">DASHBOARD</a></li>
+                <li class="navigation_item"><a href="#" class="navigation_link">VIDEOS</a></li>
+            </ul>
+        </nav>
+    </div>
+    <body>
+        <header class="header">
+        <div class="headerlogo_div">
+            <img src="./logo2.png" class="headerlogo">
+        </div>
+        <div class="heading_div">
+        <h1 class="heading_div--h1_heading">
+            <span class="heading_div--main_heading">COVID 19</span>
+            <span class="heading_div--sub_heading">stay home,stay safe</span>
+            
+        </h1>
+        <a href="#" class="button buttonbutton_white">dashboard</a>
+        </div>
+    </header>
+
+        <main>
+            <section class="section_ab">
+                <div class="text_center">
+                    <h1 class="h1_about" >
+                        about covid-19
+                    </h1>
+                    <p style="font-size: 1.4rem; color: grey;">
+                        Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.<br>
+                        Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.
+                    </p>
+                </div>
+                
+            </section>
+        </main>
+        <section class="dashboard" >
+            <div class="grid_row">
+                <div class="grid_rowcol-1">
+                    <div class="dashboard_cards">
+                    <h1 class="confirmcases"style="color: red;font-size:24px;font-weight: 500px;"></h1><br>
+                <h1 >Confirmed</h1>
+                </div>
+                </div>
+                <div class="grid_rowcol-1">
+                    <div class="dashboard_cards">
+                <h1 class="recovercases"style="color:green;"></h1><br>
+                <h1>Recovered</h1>
+                </div>
+                </div>
+                <div class="grid_rowcol-1">
+                    <div class="dashboard_cards">
+                <h1 class="totaldeceased"></h1><br>
+                <h1>Deaths</h1>
+                </div>
+                </div>
+                <div class="grid_rowcol-1">
+                    <div class="dashboard_cards">
+                <h1 class="recoveryrate"></h1><br>
+                <h1>RecoveryRate</h1>
+                </div>
+                </div>
+            
+            </div>
+            
+        </section>
+        <script>
+            $.getJSON('https://api.covid19india.org/data.json', function(data) {
+                var count=0;
+                var conf,rec,dea;
+                var len=(`${data.cases_time_series.length}`)
+                for(var i=0; i<len; i++){
+                var Confirmed = `${data.cases_time_series[i].totalconfirmed}`
+                var recover =  `${data.cases_time_series[i].totalrecovered}`
+                var decease = `${data.cases_time_series[i].totaldeceased}`
+                $(".confirmcases").html(Confirmed);
+                $(".recovercases").html(recover);
+                $(".totaldeceased").html(decease)
+                conf=Confirmed;rec=recover;dea=decease;
+                }
+                var recoveryrate =(rec/conf)*100
+                $(".recoveryrate").html(recoveryrate.toFixed(1))
+
+                
+                
+                
+            });
+            </script>
+            <section class="video_div">
+                <div class="text_center">
+                    <h1 class="h1_about" >
+                        videos
+                    </h1>
+                </div>
+                <div class="grid_row" ></div>
+                <div class="grid_rowcol-1" style="width: 450px;">
+                    <div class="video">
+                        <div class="videoside videoside--front">
+                            <div class="video_image video_image--1">
+                                
+                            </div>
+                            <h4 class="video_heading">
+                                COVID-19 Animation: What Happens If You Get Coronavirus?
+                                
+                            </h4>
+                        </div>
+                        <div class="videoside videoside--back">
+                            
+                            <a href="#" class="button buttonbutton_white" style="margin-top:230px;margin-left:90px;">watch video</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="grid_rowcol-1"style="width: 450px;">
+                    <div class="video">
+                        <div class="videoside videoside--front">
+                            <div class="video_image video_image--2">
+                            
+                            </div>
+                            <h4 class="video_heading">
+                                Global COVID-19 Prevention
+                                
+                            </h4>
+                        </div>
+                        <div class="videoside videoside--back">
+                            <a href="#" class="button buttonbutton_white" style="margin-top:230px;margin-left:90px;">watch video</a>
+                        </div>
+                    
+                        
+                    </div>
+                </div>
+                <div class="grid_rowcol-1"style="width: 450px;">
+                    <div class="video">
+                        <div class="videoside videoside--front">
+                            <div class="video_image video_image--3">
+                            
+                            </div>
+                            <h4 class="video_heading">
+                                6 Steps to Prevent COVID-19
+                                
+                            </h4>
+                        </div>
+                        <div class="videoside videoside--back">
+                            <a href="#" class="button buttonbutton_white" style="margin-top:230px;margin-left:90px;">watch video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+    </body>
+    
+</html>
