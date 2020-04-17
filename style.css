@@ -94,7 +94,7 @@ body {
 
 .dashboard {
   height: 75vh;
-  background-image: linear-gradient(to right, rgba(100, 95, 95, 0.445), rgba(169, 173, 169, 0.835)), url(../views/COVID12.jpg);
+  background-image: linear-gradient(to right, rgba(100, 95, 95, 0.445), rgba(169, 173, 169, 0.835)), url(https://ayushpurnarawat.github.io/COVID-19-DASHBOARD/COVID12.jpg);
   background-size: cover;
   transform: skewY(-7deg); }
 
@@ -105,7 +105,7 @@ body {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right, rgba(145, 142, 142, 0.664), rgba(169, 173, 169, 0.835)), url(../views/COVID1.jpg);
+  background-image: linear-gradient(to right, rgba(145, 142, 142, 0.664), rgba(169, 173, 169, 0.835)), url(https://ayushpurnarawat.github.io/COVID-19-DASHBOARD/COVID1.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); }
@@ -224,11 +224,11 @@ body {
     height: 200px;
     clip-path: polygon(0 0, 100% 0%, 100% 110%, 0 100%); }
     .video_image--1 {
-      background-image: url(../views/video1.png); }
+      background-image: url(https://ayushpurnarawat.github.io/COVID-19-DASHBOARD/video1.png); }
     .video_image--2 {
-      background-image: url(../views/video2.png); }
+      background-image: url(https://ayushpurnarawat.github.io/COVID-19-DASHBOARD/video2.png); }
     .video_image--3 {
-      background-image: url(../views/video3.png); }
+      background-image: url(https://ayushpurnarawat.github.io/COVID-19-DASHBOARD/video3.png); }
   .video_heading {
     font-size: 1.6rem;
     font-weight: 300;
